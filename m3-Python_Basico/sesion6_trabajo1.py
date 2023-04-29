@@ -3,7 +3,7 @@ def positivo_o_negativo(n):
         return "negativo"
     return "positivo"
 
-def num_check(n: int) -> int:
+def num_check(n: int) -> str:
     r = positivo_o_negativo(n)
     if n == 0:
         return "El número es cero"
