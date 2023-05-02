@@ -17,7 +17,7 @@ class Futbolista(Seleccion_Futbol):
         super().__init__(id, nombre, apellidos, edad)
         self.dorsal = dorsal
         self.demarcacion = demarcacion
-
+        
     def jugar_partido(self):
         ...
     def entrenar(self):
@@ -26,7 +26,7 @@ class Futbolista(Seleccion_Futbol):
 
 
 class Entrenador(Seleccion_Futbol):
-    def __init__(self, id, nombre, apellidos, edad,id_federacion) -> None:
+    def __init__(self, id, nombre, apellidos, edad, id_federacion) -> None:
         super().__init__(id, nombre, apellidos, edad)
         self.id_federacion = id_federacion
     def dirigir_partido(self):
