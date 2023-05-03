@@ -7,6 +7,8 @@ class Person:
         self.estatura = estatura 
         self.peso = peso
 
+    def __str__(self) -> str:
+        return f"\n{self.nombre} {self.apellidos}\n-{self.sexo}\n-{self.edad} años\n-{self.estatura} mts\n-{self.peso} kgs"
 
     def get_nombre(self):
         return self.nombre
@@ -38,3 +40,20 @@ class Person:
         return self.peso
     def set_peso(self,peso):
         self.peso = peso 
+
+
+def main():
+    persona_1 = Person("Pedro","Vivas","Masculino",20,1.78,68)
+    persona_2 = Person("Juan","Camargo","Masculino",18,1.8,75)
+
+    print(persona_1)
+    print(persona_2)
+
+    persona_1.set_edad(21)
+    persona_2.set_apellidos("Santiago")
+    
+    
+    print(persona_1)
+    print(persona_2)
+    ...
+main()
