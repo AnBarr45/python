@@ -12,7 +12,7 @@ class Automovil(Vehiculo):
         super().__init__(marca, modelo, numero_ruedas)
         
     def __str__(self) -> str:
-        tmp = super().__str__()
+        super().__str__()
         return f"Datos del automovil => Marca: {self.marca}, Modelo: {self.modelo}, {self.numero_ruedas} Ruedas,{self.velocidad} km/hr, {self.cilindrada} cc"
 
 
