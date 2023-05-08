@@ -17,7 +17,7 @@ class Automovil(Vehiculo):
 
 
     
-def obtener_datos_vehiculo(n_vehiculos: int):
+def instanciar_vehiculos(n_vehiculos: int):
     v_array = []
     for _ in range(0,n_vehiculos):
         marca = input("Inserte la marca del automovil: ")
@@ -34,7 +34,7 @@ def obtener_datos_vehiculo(n_vehiculos: int):
 
 def main():
     n_vehiculos = int(input("Cuantos Vehiculos desea insertar: "))
-    vehiculo_instancias = obtener_datos_vehiculo(n_vehiculos)
+    vehiculo_instancias = instanciar_vehiculos(n_vehiculos)
     for i in vehiculo_instancias:
         print(i)
 main()
