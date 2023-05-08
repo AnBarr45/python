@@ -13,5 +13,5 @@ class Automovil(Vehiculo):
         
     def __str__(self) -> str:
         super().__str__()
-        return f"Datos del automovil => Marca: {self.marca}, Modelo: {self.modelo}, {self.numero_ruedas} Ruedas,{self.velocidad} km/hr, {self.cilindrada} cc"
+        return f"Marca: {self.marca}| Modelo: {self.modelo} | {self.numero_ruedas} Ruedas | {self.velocidad} km/hr | {self.cilindrada} cc|"
 
