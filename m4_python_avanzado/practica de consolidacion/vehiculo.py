@@ -5,15 +5,19 @@ class Vehiculo:
         self.modelo = modelo
         self.num_ruedas = num_ruedas
 
+    def __str__(self) -> str:
+        return f"|Marca: {self.marca}| Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
+    
+    
 class Automovil(Vehiculo):
-    def __init__(self,*args,**kwargs) -> None:
-        self.velocidad = int(input("-Inserte la velocidad del automovil en km/hr: "))
-        self.cilindrada = int(input("-Inserte el cilindraje del automovil: "))
+    def __init__(self,marca,modelo,num_ruedas,velocidad, cilindrada ) -> None:
+        super().__init__(marca,modelo,num_ruedas)
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
         
-        super(Automovil,self).__init__(*args,**kwargs)
         
     def __str__(self) -> str:
-        return f"|Marca: {self.marca}| Modelo: {self.modelo} | {self.num_ruedas} Ruedas | {self.velocidad} km/hr | {self.cilindrada} cc|"
+        return super().__str__() + f"{self.velocidad} km/hr | {self.cilindrada} cc|"
         
 # ################################## PARTE 2 #################################### #
 class Particular(Automovil):
