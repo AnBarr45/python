@@ -10,53 +10,50 @@ class Vehiculo:
     
     
 class Automovil(Vehiculo):
-    def __init__(self,marca,modelo,num_ruedas,velocidad, cilindrada ) -> None:
-        super().__init__(marca,modelo,num_ruedas)
+    def __init__(self,*args,velocidad,cilindrada) -> None:
+        super().__init__(*args)   
         self.velocidad = velocidad
         self.cilindrada = cilindrada
-        
-        
     def __str__(self) -> str:
-        return super().__str__() + f" {self.velocidad} km/hr | {self.cilindrada} cc|"
+        return super().__str__() + f" {self.velocidad} km/hr | {self.cilindrada} cc |"
         
 # ################################## PARTE 2 #################################### #
 class Particular(Automovil):
-    def __init__(self,num_puestos,*args,**kwargs) -> None:
+    def __init__(self,*args,num_puestos,**kwargs) -> None:
         self.num_puestos = num_puestos
-        super(Particular,self).__init__(*args,**kwargs)
+        super().__init__(*args,**kwargs)
         
     def __str__(self) -> str:
-        return super().__str__() + f" {self.num_puestos} |"
+        return super().__str__() + f" {self.num_puestos} Puestos |"
 
 class Carga(Automovil):
-    def __init__(self,peso_carga,*args,**kwargs) -> None:
-        self.peso_carga = peso_carga
-        super(Carga,self).__init__(*args,**kwargs)
-
+    def __init__(self,*args,peso,**kwargs) -> None: 
+        super().__init__(*args,**kwargs)
+        self.peso_carga = peso
     def __str__(self) -> str:
-        return super().__str__() + f" {self.peso_carga} |"
+        return super().__str__() + f" {self.peso_carga} kgs |"
     
-class Bicicleta(Vehiculo):   
-    def __init__(self,*args,**kwargs) -> None:
-        super(Bicicleta,self).__init__(*args,**kwargs)
-        
+class Bicicleta(Vehiculo):      
+    def __init__(self,*args,**kwargs) -> None: 
+        super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
 class Urbana(Bicicleta):
-    def __init__(self,*args,**kwargs) -> None:
-        super(Urbana,self).__init__(*args,**kwargs)
+
+    def __init__(self,*args,**kwargs) -> None: 
+        super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
 class Carrera(Bicicleta):
-    def __init__(self,*args,**kwargs) -> None:
-        super(Carrera,self).__init__(*args,**kwargs)
+    def __init__(self,*args,**kwargs) -> None: 
+        super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
 class Motocicleta(Bicicleta):
     def __init__(self,*args,**kwargs) -> None:
-        super(Motocicleta,self).__init__(*args,**kwargs)
+        super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
