@@ -3,8 +3,8 @@ import vehiculo
 def main():
     obj1 = vehiculo.Vehiculo("marca","modelo",4)
     obj2 = vehiculo.Automovil("marca","modelo",4,velocidad=123,cilindrada=456)
-    obj3 = vehiculo.Particular("marca","modelo",4,123,456, num_puestos=1)
-    obj4 = vehiculo.Carga("marca","modelo",4,123,456, peso=7)
+    obj3 = vehiculo.Particular("marca","modelo",4,velocidad=123,cilindrada=456, num_puestos=1)
+    obj4 = vehiculo.Carga("marca","modelo",4,velocidad=123,cilindrada=456, peso=7)
     obj5 = vehiculo.Bicicleta("marca","modelo",1)
     obj6 = vehiculo.Urbana("marca","modelo",1)
     obj7 = vehiculo.Motocicleta("marca","modelo",2)
