@@ -35,7 +35,7 @@ class Carga(Automovil):
         return super().__str__() + f" {self.peso_carga} kgs |"
 ##########################################################
 class Bicicleta(Vehiculo):      
-    def __init__(self, *args,tipo, **kwargs) -> None: 
+    def __init__(self, *args,tipo: str, **kwargs) -> None: 
         self.tipo = tipo
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
