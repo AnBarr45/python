@@ -4,11 +4,11 @@ class Vehiculo:
         self.marca = marca
         self.modelo = modelo
         self.num_ruedas = num_ruedas
-
     def __str__(self) -> str:
         return f"|Marca: {self.marca}| Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
     
     
+##########################################################
 class Automovil(Vehiculo):
     def __init__(self,*args, velocidad: int, cilindrada: int) -> None:
         super().__init__(*args)   
@@ -26,34 +26,41 @@ class Particular(Automovil):
     def __str__(self) -> str:
         return super().__str__() + f" {self.num_puestos} Puestos |"
 
+##########################################################
 class Carga(Automovil):
     def __init__(self,*args, peso: int, **kwargs) -> None: 
         super().__init__(*args, **kwargs)
         self.peso_carga = peso
     def __str__(self) -> str:
         return super().__str__() + f" {self.peso_carga} kgs |"
-    
+##########################################################
 class Bicicleta(Vehiculo):      
-    def __init__(self, *args, **kwargs) -> None: 
+    def __init__(self, *args,tipo, **kwargs) -> None: 
+        self.tipo = tipo
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
+##########################################################
 class Urbana(Bicicleta):
-
     def __init__(self, *args, **kwargs) -> None: 
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
+##########################################################
 class Carrera(Bicicleta):
     def __init__(self, *args, **kwargs) -> None: 
         super().__init__(*args, **kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
+##########################################################
 class Motocicleta(Bicicleta):
-    def __init__(self, *args, **kwargs) -> None:
+    def __init__(self, *args,nro_radios,cuadro,motor, **kwargs) -> None:
+        self.nro_radios = nro_radios
+        self.cuadro = cuadro
+        self.motor = motor
         super().__init__(*args, **kwargs)
     def __str__(self) -> str:
         return super().__str__()

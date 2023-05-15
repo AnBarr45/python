@@ -1,21 +1,11 @@
 import vehiculo
 
 def main():
-    obj1 = vehiculo.Vehiculo("marca","modelo",4)
-    obj2 = vehiculo.Automovil("marca","modelo",4,velocidad=123,cilindrada=456)
-    obj3 = vehiculo.Particular("marca","modelo",4,velocidad=123,cilindrada=456, num_puestos=1)
-    obj4 = vehiculo.Carga("marca","modelo",4,velocidad=123,cilindrada=456, peso=7)
-    obj5 = vehiculo.Bicicleta("marca","modelo",1)
-    obj6 = vehiculo.Urbana("marca","modelo",1)
-    obj7 = vehiculo.Motocicleta("marca","modelo",2)
+    vehiculo_base = vehiculo.Vehiculo("marca","modelo",4) 
+    auto_base = vehiculo.Automovil("marca","modelo",4,velocidad=100,cilindrada=800)
+    auto_particular = vehiculo.Particular("Ford","Fiesta",4,velocidad=180,cilindrada=500,num_puestos=5)
+    auto_carga = vehiculo.Carga("Daft Trucks","G 38",10,velocidad=120,cilindrada=1_000,peso=20_000)
+    bicicleta = vehiculo.Bicicleta("Shimano","MT Ranger",2, tipo="Carrera")
+    motocicleta = vehiculo.Motocicleta("BMW","F800s",2,tipo="Deportiva",nro_radios=1,motor="2T",cuadro="Doble Viga")
     
-    
-    print(f"\nDatos del vehiculo => {1}:\n{obj1}")
-    print(f"\nDatos del vehiculo => {2}:\n{obj2}")
-    print(f"\nDatos del vehiculo => {3}:\n{obj3}")
-    print(f"\nDatos del vehiculo => {4}:\n{obj4}")
-    print(f"\nDatos del vehiculo => {5}:\n{obj5}")
-    print(f"\nDatos del vehiculo => {6}:\n{obj6}")
-    print(f"\nDatos del vehiculo => {7}:\n{obj7}")
-        
 main()
