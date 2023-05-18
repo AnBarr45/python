@@ -34,25 +34,12 @@ class Carga(Automovil):
 ##########################################################
 class Bicicleta(Vehiculo):      
     def __init__(self, *args,tipo: str, **kwargs) -> None: 
-        self.tipo = tipo
+        self.tipo = tipo # Urbana o Carrera
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__()
     
-##########################################################
-class Urbana(Bicicleta):
-    def __init__(self, *args, **kwargs) -> None: 
-        super().__init__(*args,**kwargs)
-    def __str__(self) -> str:
-        return super().__str__()
-    
-##########################################################
-class Carrera(Bicicleta):
-    def __init__(self, *args, **kwargs) -> None: 
-        super().__init__(*args, **kwargs)
-    def __str__(self) -> str:
-        return super().__str__()
-    
+
 ##########################################################
 class Motocicleta(Bicicleta):
     def __init__(self, *args,nro_radios,cuadro,motor, **kwargs) -> None:
