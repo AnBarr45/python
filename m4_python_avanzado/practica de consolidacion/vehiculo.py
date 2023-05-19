@@ -5,7 +5,7 @@ class Vehiculo:
         self.modelo = modelo
         self.num_ruedas = num_ruedas
     def __str__(self) -> str:
-        return f"|Marca: {self.marca}| Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
+        return f"| Marca: {self.marca} | Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
 ##########################################################
 class Automovil(Vehiculo):
     def __init__(self,*args, velocidad: int, cilindrada: int) -> None:
@@ -37,7 +37,7 @@ class Bicicleta(Vehiculo):
         self.tipo = tipo # Urbana o Carrera
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
-        return super().__str__()
+        return super().__str__() + f" Tipo: {self.tipo} |"
     
 
 ##########################################################
@@ -48,4 +48,4 @@ class Motocicleta(Bicicleta):
         self.motor = motor
         super().__init__(*args, **kwargs)
     def __str__(self) -> str:
-        return super().__str__()
+        return super().__str__() +f" Motor: {self.motor} | Cuadro: {self.cuadro} | Nro Radios: {self.nro_radios} |"
