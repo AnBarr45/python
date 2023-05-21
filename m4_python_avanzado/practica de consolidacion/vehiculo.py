@@ -6,6 +6,7 @@ class Vehiculo:
         self.num_ruedas = num_ruedas
     def __str__(self) -> str:
         return f"| Marca: {self.marca} | Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
+    
 ##########################################################
 class Automovil(Vehiculo):
     def __init__(self,*args, velocidad: int, cilindrada: int) -> None:
