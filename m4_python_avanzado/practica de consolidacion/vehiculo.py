@@ -1,3 +1,4 @@
+import csv
 # ################################## PARTE 1 #################################### #
 class Vehiculo:
     def __init__(self, marca: str, modelo: str, num_ruedas: int) -> None:
@@ -7,6 +8,20 @@ class Vehiculo:
     def __str__(self) -> str:
         return f"| Marca: {self.marca} | Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
     
+    def guardar_datos_csv(self,archivo_destino):
+        archivo = open(archivo_destino, "w")
+        datos = [(self.__class__, self.__dict__)]
+        archivo_csv = csv.writer(archivo)
+        archivo_csv.writerows(datos)
+        archivo.close()
+    def leer_datos_csv(self,archivo):
+        vehiculos = []
+        archivo = open(archivo, "r")
+        archivo_csv = csv.reader(archivo)
+        for vehiculo in archivo_csv:
+            vehiculos.append(vehiculo)
+        archivo.close()
+        return vehiculos
 ##########################################################
 class Automovil(Vehiculo):
     def __init__(self,*args, velocidad: int, cilindrada: int) -> None:

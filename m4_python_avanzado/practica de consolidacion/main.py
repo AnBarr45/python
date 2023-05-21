@@ -1,4 +1,5 @@
 from vehiculo import *
+import csv
 def pt1():
     lista_autos = [] 
     for i in range(0,3):
@@ -35,8 +36,10 @@ def pt2():
         print(f"\nMotocicleta es instancia con relacion a {cls.__name__}?: {isinstance(motocicleta,cls)}")
 
 
+
 def main():
     # pt1()
-    pt2()
+    # pt2()
+    ...
     
 main()
