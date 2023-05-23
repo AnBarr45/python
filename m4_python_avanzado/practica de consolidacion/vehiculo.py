@@ -15,8 +15,6 @@ class Vehiculo:
             print(f"'{archivo}' is a Directory, not a file")
         except PermissionError:
             exit(f"No permission to write to file {archivo}")
-        except OSError:
-            exit()
         else:
             datos = [(self.__class__, self.__dict__)]
             archivo_csv = csv.writer(archivo)
