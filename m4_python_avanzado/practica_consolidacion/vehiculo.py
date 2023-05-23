@@ -37,13 +37,11 @@ class Vehiculo:
         except FileNotFoundError:
             print(f"Archivo {archivo} no existe o no es posible encontrarlo")
         else:
-            
             clases = [Vehiculo,Automovil,Particular,Carga,Bicicleta,Motocicleta]
             vehiculos = []
             archivo_csv = csv.reader(archivo)
             for v in archivo_csv:
                 if not v: continue
-                
                 vehiculos.append(v)
             archivo.close()
             for v in vehiculos:

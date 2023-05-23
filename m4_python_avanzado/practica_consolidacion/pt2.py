@@ -1,6 +1,6 @@
 from vehiculo import *
 
-def parte2() -> list:
+def parte2(flag=1) -> list:
     vehiculo_base = Vehiculo("marca_generica1","modelo_generico1",4) 
     auto_base = Automovil("marca_generica2","modelo_generico2",4,velocidad=100,cilindrada=800)
     auto_particular = Particular("Ford","Fiesta",4,velocidad=180,cilindrada=500,num_puestos=5)
@@ -10,9 +10,10 @@ def parte2() -> list:
     
     objetos = [vehiculo_base,auto_base,auto_particular,auto_carga,bicicleta,motocicleta]
     clases = [Vehiculo,Automovil,Particular,Carga,Bicicleta,Motocicleta]
-    
+    if flag == 1: return objetos
+    print("############################## PARTE 2 ################################### \n") 
     for obj in objetos:
-        print(obj)
+        print(obj, "\n")
         
     for cls in clases:
         print(f"Motocicleta es instancia con relacion a {cls.__name__}?: {isinstance(motocicleta,cls)}\n")

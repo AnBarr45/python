@@ -7,7 +7,7 @@ def parte1() -> None:
     v = [120,95,125]
     cc = [800,1200,1500]
     lista_autos = [] 
-    
+    print("############################## PARTE 1 ###################################") 
     for i in range(0,3):
         print(f"\nIngrese los datos del vehiculo {i + 1} => ")
         print(f"Inserte la marca: {marcas[i]}")
