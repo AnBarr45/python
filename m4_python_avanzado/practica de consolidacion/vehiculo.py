@@ -54,7 +54,7 @@ class Bicicleta(Vehiculo):
         return super().__str__() + f" Tipo: {self.tipo} |"
 ##########################################################
 class Motocicleta(Bicicleta):
-    def __init__(self, *args,nro_radios,cuadro,motor, **kwargs) -> None:
+    def __init__(self, *args, nro_radios: int, cuadro: str, motor: str, **kwargs) -> None:
         self.nro_radios = nro_radios
         self.cuadro = cuadro
         self.motor = motor
