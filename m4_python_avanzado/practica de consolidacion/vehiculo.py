@@ -30,7 +30,6 @@ class Automovil(Vehiculo):
         self.cilindrada = cilindrada
     def __str__(self) -> str:
         return super().__str__() + f" {self.velocidad} km/hr | {self.cilindrada} cc |"
-        
 # ################################## PARTE 2 #################################### #
 class Particular(Automovil):
     def __init__(self, *args, num_puestos: int , **kwargs) -> None:
@@ -39,7 +38,6 @@ class Particular(Automovil):
         
     def __str__(self) -> str:
         return super().__str__() + f" {self.num_puestos} Puestos |"
-
 ##########################################################
 class Carga(Automovil):
     def __init__(self,*args, peso: int, **kwargs) -> None: 
@@ -54,8 +52,6 @@ class Bicicleta(Vehiculo):
         super().__init__(*args,**kwargs)
     def __str__(self) -> str:
         return super().__str__() + f" Tipo: {self.tipo} |"
-    
-
 ##########################################################
 class Motocicleta(Bicicleta):
     def __init__(self, *args,nro_radios,cuadro,motor, **kwargs) -> None:
