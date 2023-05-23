@@ -17,10 +17,10 @@ class Vehiculo:
     def guardar_datos_csv(self,archivo):
         try:
             archivo = open(archivo, "a")   
-        except IsADirectoryError:
-            print(f"'{archivo}' is a Directory, not a file")
-        except PermissionError:
-            exit(f"No permission to write to file {archivo}")
+        except IsADirectoryError:   
+            print(f"'{archivo}' es una carpeta, no un archivo")
+        except PermissionError:   
+            exit(f"No tiene permiso para acceder al archivo '{archivo}'")
         else:
             datos = [(self.__class__, self.__dict__)]
             archivo_csv = csv.writer(archivo)
@@ -31,12 +31,14 @@ class Vehiculo:
         try:
             archivo = open(archivo, "r")   
         except PermissionError:
-            exit(f"No permission to read the contents of file {archivo}")
+            exit(f"No tiene permiso para acceder al archivo '{archivo}'")
         except IsADirectoryError:
-            print(f"'{archivo}' is a Directory, not a file")
+            print(f"'{archivo}' es una carpeta, no un archivo")
         except FileNotFoundError:
-            print(f"File {archivo} does not exist or can't be found")
+            print(f"Archivo {archivo} no existe o no es posible encontrarlo")
         else:
+            
+            clases = [Vehiculo,Automovil,Particular,Carga,Bicicleta,Motocicleta]
             vehiculos = []
             archivo_csv = csv.reader(archivo)
             for v in archivo_csv:
@@ -45,8 +47,12 @@ class Vehiculo:
                 vehiculos.append(v)
             archivo.close()
             for v in vehiculos:
-                print(f"Lista de Vehiculos {v}:")
-                # print(v)
+                clase = None
+                for i in clases:
+                    if i.__name__ in v[0]: clase = i.__name__ 
+                print(f"Lista de Vehiculos {clase}:")
+                print(v[1], "\n")
+            return vehiculos
         
 ##########################################################
 class Automovil(Vehiculo):
