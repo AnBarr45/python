@@ -7,7 +7,13 @@ class Vehiculo:
         self.num_ruedas = num_ruedas
     def __str__(self) -> str:
         return f"| Marca: {self.marca} | Modelo: {self.modelo} | {self.num_ruedas} Ruedas |"
-    
+    # accesador
+    def acceder_atributo(self,attr):
+        return self.__getattribute__(attr)
+    # mutador
+    def mutar_atributo(self,attr,value):
+        self.__setattr__(attr,value)
+        
     def guardar_datos_csv(self,archivo):
         try:
             archivo = open(archivo, "a")   
