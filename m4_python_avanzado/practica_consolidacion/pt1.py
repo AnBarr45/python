@@ -2,14 +2,14 @@ from vehiculo import Automovil
 
 def parte1() -> None:
     marcas = ["Toyota","Fiat","Ford"]
-    modelos = ["Yaris","Palio"]
+    modelos = ["Yaris","Palio","Fiesta"]
     ruedas = [4,4,4]
     v = [120,95,125]
     cc = [800,1200,1500]
     lista_autos = [] 
     
     for i in range(0,3):
-        print(f"\nIngrese los datos del vehiculo {i} => ")
+        print(f"\nIngrese los datos del vehiculo {i + 1} => ")
         print(f"Inserte la marca: {marcas[i]}")
         print(f"Inserte el modelo: {modelos[i]}")
         print(f"Inserte el numero de ruedas: {ruedas[i]}")

@@ -4,8 +4,7 @@ from pt1 import *
 from pt2 import *
 
 def main():
-    # parte1()
-    
+    parte1()
     vehiculos = parte2()
     
     # for vh in vehiculos:
