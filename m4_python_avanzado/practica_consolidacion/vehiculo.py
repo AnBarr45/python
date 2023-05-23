@@ -1,7 +1,7 @@
 import csv
 # ################################## PARTE 1 #################################### #
 class Vehiculo:
-    def __init__(self, marca: str, modelo: str, num_ruedas: int) -> None:
+    def __init__(self, marca: str, modelo: str, num_ruedas: int):
         self.marca = marca
         self.modelo = modelo
         self.num_ruedas = num_ruedas
@@ -10,7 +10,7 @@ class Vehiculo:
     
     def guardar_datos_csv(self,archivo):
         try:
-            archivo = open(archivo, "w")   
+            archivo = open(archivo, "a")   
         except IsADirectoryError:
             print(f"'{archivo}' is a Directory, not a file")
         except PermissionError:
@@ -20,8 +20,8 @@ class Vehiculo:
             archivo_csv = csv.writer(archivo)
             archivo_csv.writerows(datos)
             archivo.close()
-            
-    def leer_datos_csv(self,archivo):
+    @staticmethod
+    def leer_datos_csv(archivo):
         try:
             archivo = open(archivo, "r")   
         except PermissionError:
@@ -33,10 +33,14 @@ class Vehiculo:
         else:
             vehiculos = []
             archivo_csv = csv.reader(archivo)
-            for vehiculo in archivo_csv:
-                vehiculos.append(vehiculo)
+            for v in archivo_csv:
+                if not v: continue
+                
+                vehiculos.append(v)
             archivo.close()
-            return vehiculos
+            for v in vehiculos:
+                print(f"Lista de Vehiculos {v}:")
+                # print(v)
         
 ##########################################################
 class Automovil(Vehiculo):

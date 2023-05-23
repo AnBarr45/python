@@ -1,8 +1,8 @@
 from vehiculo import *
 
-def pt2():
-    vehiculo_base = Vehiculo("marca","modelo",4) 
-    auto_base = Automovil("marca","modelo",4,velocidad=100,cilindrada=800)
+def parte2() -> list:
+    vehiculo_base = Vehiculo("marca_generica1","modelo_generico1",4) 
+    auto_base = Automovil("marca_generica2","modelo_generico2",4,velocidad=100,cilindrada=800)
     auto_particular = Particular("Ford","Fiesta",4,velocidad=180,cilindrada=500,num_puestos=5)
     auto_carga = Carga("Daft Trucks","G 38",10,velocidad=120,cilindrada=1_000,peso=20_000)
     bicicleta = Bicicleta("Shimano","MT Ranger",2, tipo="Carrera")
@@ -15,4 +15,6 @@ def pt2():
         print(obj)
         
     for cls in clases:
-        print(f"\nMotocicleta es instancia con relacion a {cls.__name__}?: {isinstance(motocicleta,cls)}")
+        print(f"Motocicleta es instancia con relacion a {cls.__name__}?: {isinstance(motocicleta,cls)}\n")
+    
+    return objetos
