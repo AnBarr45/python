@@ -11,7 +11,7 @@ def parte2(flag=0) -> list:
     objetos = [vehiculo_base,auto_base,auto_particular,auto_carga,bicicleta,motocicleta]
     clases = [Vehiculo,Automovil,Particular,Carga,Bicicleta,Motocicleta]
     
-    if flag == 1: return objetos # como llamo esta funcion en main y en pt3, no quiero que se imprima dos veces
+    if flag == 1: return objetos # llamo esta funcion en main y en pt3, hago early return para que no se imprima dos veces
     
     print("############################## PARTE 2 ################################### \n") 
     
